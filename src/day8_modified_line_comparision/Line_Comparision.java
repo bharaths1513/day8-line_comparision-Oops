@@ -12,6 +12,7 @@ class linecomparision
 	static int b2;
 	static int length1;
 	static int length2;
+	
 
 	void length1(int x1,int x2,int y1,int y2)  	//calculcating the length of  line 1
 	{
@@ -23,6 +24,7 @@ class linecomparision
 		length2 = (int)Math.sqrt(((a2-a1)*(a2-a1))+((b2-b1)*(b2-b1)));
 		System.out.println("length2 "+length2);
 	}
+	
 	
 	void equal() {
 		String s1=String.valueOf(length1);   	//converting int type to string to check equality
@@ -36,6 +38,24 @@ class linecomparision
 			System.out.println("Lines are not equal ");
 		}
 	}
+	void compare()		//comparing the two lines greater,equal and lesser
+	{
+		String s1=String.valueOf(length1);   	
+		String s2=String.valueOf(length2);
+		int var=s1.compareTo(s2);
+		 if(var==0)
+	        {
+	            System.out.println("Two Lines are equal...");
+	        }
+	        else if(var>0)
+	        {
+	            System.out.println("The length of First line is greater then Second line");
+	        }
+	        else
+	        {
+	            System.out.println("The length of Second line is greater then First line");
+	        }
+	}
 	
 }
 public class Line_Comparision {
@@ -46,5 +66,6 @@ public class Line_Comparision {
 		o.length1(10, 20, 30, 40);
 		o.length2(10, 20, 30, 40);
 		o.equal();
+		o.compare();
 	}
 }
